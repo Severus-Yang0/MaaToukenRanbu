@@ -1,0 +1,321 @@
+{
+    "练级54_任务入口": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "练级54_寻找出阵按钮",
+            "练级54_寻找切换按钮"
+        ]
+    },
+    "练级54_寻找切换按钮": {
+        "recognition": "OCR",
+        "expected": "切换",
+        "roi": [
+            1139,
+            3,
+            138,
+            55
+        ],
+        "action": "Click",
+        "next": [
+            "练级54_寻找出阵按钮"
+        ],
+        "pre_delay": 500
+    },
+    "练级54_寻找出阵按钮": {
+        "recognition": "OCR",
+        "expected": "出阵",
+        "roi": [
+            1147,
+            64,
+            129,
+            69
+        ],
+        "action": "Click",
+        "next": [
+            "练级54_点击出阵菜单"
+        ],
+        "pre_delay": 500
+    },
+    "练级54_点击出阵菜单": {
+        "recognition": "OCR",
+        "expected": "出阵",
+        "roi": [
+            426,
+            79,
+            312,
+            362
+        ],
+        "action": "Click",
+        "next": [
+            "练级54_寻找武家记忆关卡",
+            "练级54_向右翻页寻找",
+            "练级54_向左翻页寻找"
+        ],
+        "pre_delay": 500
+    },
+    "练级54_寻找武家记忆关卡": {
+        "recognition": "OCR",
+        "expected": "武家的记忆",
+        "roi": [
+            179,
+            239,
+            123,
+            48
+        ],
+        "action": "Click",
+        "next": [
+            "练级54_选择阿津贺志山关卡"
+        ],
+        "pre_delay": 500
+    },
+    "练级54_向右翻页寻找": {
+        "recognition": "ColorMatch",
+        "lower": [
+            2,
+            114,
+            18
+        ],
+        "upper": [
+            4,
+            116,
+            20
+        ],
+        "roi": [
+            446,
+            195,
+            29,
+            85
+        ],
+        "count": 20,
+        "action": "Click",
+        "next": [
+            "练级54_寻找武家记忆关卡",
+            "练级54_向右翻页寻找",
+            "练级54_向左翻页寻找"
+        ],
+        "post_delay": 500
+    },
+    "练级54_向左翻页寻找": {
+        "recognition": "ColorMatch",
+        "lower": [
+            2,
+            114,
+            18
+        ],
+        "upper": [
+            4,
+            116,
+            20
+        ],
+        "roi": [
+            140,
+            197,
+            29,
+            84
+        ],
+        "count": 20,
+        "action": "Click",
+        "next": [
+            "练级54_寻找武家记忆关卡",
+            "练级54_向左翻页寻找"
+        ],
+        "post_delay": 500
+    },
+    "练级54_选择阿津贺志山关卡": {
+        "recognition": "OCR",
+        "expected": "阿津贺志山之战",
+        "roi": [
+            565,
+            562,
+            232,
+            55
+        ],
+        "action": "Click",
+        "next": [
+            "练级54_选择部队三",
+            "练级54_选择阿津贺志山关卡"
+        ]
+    },
+    "练级54_选择部队三": {
+        "recognition": "OCR",
+        "expected": "三",
+        "roi": [
+            190,
+            480,
+            33,
+            33
+        ],
+        "action": "Click",
+        "next": [
+            "练级54_确认即刻出阵"
+        ]
+    },
+    "练级54_确认即刻出阵": {
+        "recognition": "OCR",
+        "expected": "即刻出阵",
+        "roi": [
+            823,
+            586,
+            203,
+            87
+        ],
+        "action": "Click",
+        "next": [
+            "练级54_战斗循环点击"
+        ],
+        "post_delay": 5000
+    },
+    "练级54_战斗循环点击": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            852,
+            168,
+            96,
+            84
+        ],
+        "next": [
+            "练级54_检测回到本丸",
+            "练级54_检测战斗阶段",
+            "练级54_战斗循环点击"
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000
+    },
+    "练级54_检测回到本丸": {
+        "recognition": "OCR",
+        "expected": "切换",
+        "roi": [
+            1176,
+            10,
+            74,
+            36
+        ],
+        "pre_delay": 5000,
+        "next": [
+            "练级54_任务入口"
+        ]
+    },
+    "练级54_检测战斗阶段": {
+        "recognition": "OCR",
+        "expected": "进军",
+        "roi": [
+            742,
+            471,
+            109,
+            71
+        ],
+        "action": "DoNothing",
+        "next": [
+            "练级54_检测是否王点前右",
+            "练级54_检测是否王点前左",
+            "练级54_继续进军"
+        ],
+        "pre_delay": 500,
+        "post_delay": 4000
+    },
+    "练级54_继续进军": {
+        "recognition": "OCR",
+        "expected": "进军",
+        "roi": [
+            739,
+            482,
+            118,
+            59
+        ],
+        "action": "Click",
+        "next": [
+            "练级54_检测重伤状态",
+            "练级54_战斗循环点击"
+        ],
+        "pre_delay": 500,
+        "post_delay": 5000
+    },
+    "练级54_检测重伤状态": {
+        "recognition": "OCR",
+        "expected": "重伤",
+        "action": "DoNothing",
+        "next": [
+            "结束任务"
+        ]
+    },
+    "练级54_检测是否王点前右": {
+        "recognition": "ColorMatch",
+        "roi": [
+            1114,
+            300,
+            7,
+            11
+        ],
+        "lower": [
+            245,
+            239,
+            223
+        ],
+        "upper": [
+            248,
+            241,
+            225
+        ],
+        "action": "DoNothing",
+        "next": [
+            "练级54_点击返回本丸"
+        ]
+    },
+    "练级54_检测是否王点前左": {
+        "recognition": "ColorMatch",
+        "roi": [
+            1090,
+            297,
+            9,
+            12
+        ],
+        "lower": [
+            245,
+            239,
+            223
+        ],
+        "upper": [
+            248,
+            241,
+            225
+        ],
+        "action": "DoNothing",
+        "next": [
+            "练级54_点击返回本丸"
+        ]
+    },
+    "练级54_点击返回本丸": {
+        "recognition": "OCR",
+        "expected": "本丸",
+        "roi": [
+            1109,
+            475,
+            119,
+            67
+        ],
+        "action": "Click",
+        "next": [
+            "练级54_确认返回本丸"
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000
+    },
+    "练级54_确认返回本丸": {
+        "recognition": "OCR",
+        "expected": "是",
+        "roi": [
+            503,
+            455,
+            41,
+            40
+        ],
+        "action": "Click",
+        "next": [
+            "练级54_任务入口"
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000
+    }
+}

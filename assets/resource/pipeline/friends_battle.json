@@ -1,0 +1,175 @@
+{
+    "演练_任务入口": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "演练_寻找出阵按钮",
+            "演练_寻找切换按钮"
+        ]
+    },
+    "演练_寻找切换按钮": {
+        "recognition": "OCR",
+        "expected": "切换",
+        "roi": [
+            1139,
+            3,
+            138,
+            55
+        ],
+        "action": "Click",
+        "next": [
+            "演练_寻找出阵按钮"
+        ],
+        "pre_delay": 500
+    },
+    "演练_寻找出阵按钮": {
+        "recognition": "OCR",
+        "expected": "出阵",
+        "roi": [
+            1147,
+            64,
+            129,
+            69
+        ],
+        "action": "Click",
+        "next": [
+            "演练_检查红点提示",
+            "结束任务"
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000
+    },
+    "演练_检查红点提示": {
+        "recognition": "ColorMatch",
+        "action": "DoNothing",
+        "roi": [
+            971,
+            487,
+            21,
+            27
+        ],
+        "lower": [
+            235,
+            0,
+            0
+        ],
+        "upper": [
+            245,
+            0,
+            0
+        ],
+        "next": [
+            "演练_点击演练入口"
+        ],
+        "count": 10,
+        "pre_delay": 500
+    },
+    "演练_点击演练入口": {
+        "recognition": "OCR",
+        "expected": "演练",
+        "roi": [
+            780,
+            505,
+            203,
+            126
+        ],
+        "action": "Click",
+        "next": [
+            "演练_寻找发起挑战"
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000
+    },
+    "演练_寻找发起挑战": {
+        "recognition": "OCR",
+        "expected": "发起挑战",
+        "roi": [
+            862,
+            164,
+            183,
+            512
+        ],
+        "action": "Click",
+        "next": [
+            "演练_确认进入演练"
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000
+    },
+    "演练_确认进入演练": {
+        "recognition": "OCR",
+        "expected": "进入演练",
+        "roi": [
+            824,
+            594,
+            209,
+            85
+        ],
+        "action": "Click",
+        "next": [
+            "演练_选择部队二"
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000
+    },
+    "演练_选择部队二": {
+        "recognition": "OCR",
+        "expected": "二",
+        "roi": [
+            193,
+            312,
+            28,
+            37
+        ],
+        "action": "Click",
+        "next": [
+            "演练_开始战斗"
+        ],
+        "pre_delay": 500
+    },
+    "演练_开始战斗": {
+        "recognition": "OCR",
+        "expected": "演练开始",
+        "roi": [
+            831,
+            600,
+            190,
+            71
+        ],
+        "action": "Click",
+        "next": [
+            "演练_战斗循环点击"
+        ],
+        "pre_delay": 500
+    },
+    "演练_战斗循环点击": {
+        "recognition": "DirectHit",
+        "target": [
+            830,
+            349,
+            55,
+            48
+        ],
+        "action": "Click",
+        "next": [
+            "演练_检测战斗结束",
+            "演练_战斗循环点击"
+        ],
+        "pre_delay": 500
+    },
+    "演练_检测战斗结束": {
+        "recognition": "OCR",
+        "expected": "不显示签名",
+        "roi": [
+            908,
+            76,
+            133,
+            49
+        ],
+        "action": "DoNothing",
+        "next": [
+            "演练_寻找发起挑战",
+            "结束任务"
+        ]
+    }
+}

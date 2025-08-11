@@ -1,0 +1,216 @@
+{
+    "刷花_任务入口": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "刷花_寻找出阵按钮",
+            "刷花_寻找切换按钮"
+        ]
+    },
+    "刷花_寻找切换按钮": {
+        "recognition": "OCR",
+        "expected": "切换",
+        "roi": [
+            1139,
+            3,
+            138,
+            55
+        ],
+        "action": "Click",
+        "next": [
+            "刷花_寻找出阵按钮"
+        ],
+        "pre_delay": 500
+    },
+    "刷花_寻找出阵按钮": {
+        "recognition": "OCR",
+        "expected": "出阵",
+        "roi": [
+            1147,
+            64,
+            129,
+            69
+        ],
+        "action": "Click",
+        "next": [
+            "刷花_点击出阵菜单"
+        ],
+        "pre_delay": 500
+    },
+    "刷花_点击出阵菜单": {
+        "recognition": "OCR",
+        "expected": "出阵",
+        "roi": [
+            426,
+            79,
+            312,
+            362
+        ],
+        "action": "Click",
+        "next": [
+            "刷花_寻找维新记忆关卡",
+            "刷花_向左翻页寻找"
+        ],
+        "pre_delay": 500
+    },
+    "刷花_向左翻页寻找": {
+        "recognition": "ColorMatch",
+        "lower": [
+            2,
+            114,
+            18
+        ],
+        "upper": [
+            4,
+            116,
+            20
+        ],
+        "roi": [
+            140,
+            197,
+            29,
+            84
+        ],
+        "count": 20,
+        "action": "Click",
+        "next": [
+            "刷花_寻找维新记忆关卡",
+            "刷花_向左翻页寻找"
+        ],
+        "post_delay": 500
+    },
+    "刷花_寻找维新记忆关卡": {
+        "recognition": "OCR",
+        "expected": "维新的记忆",
+        "action": "Click",
+        "next": [
+            "刷花_选择函馆关卡"
+        ],
+        "pre_delay": 500
+    },
+    "刷花_选择函馆关卡": {
+        "recognition": "OCR",
+        "expected": "函馆",
+        "roi": [
+            154,
+            343,
+            85,
+            53
+        ],
+        "action": "Click",
+        "next": [
+            "刷花_选择部队一",
+            "刷花_选择函馆关卡"
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000
+    },
+    "刷花_选择部队一": {
+        "recognition": "OCR",
+        "expected": "部",
+        "roi": [
+            192,
+            78,
+            32,
+            38
+        ],
+        "action": "Click",
+        "next": [
+            "刷花_确认即刻出阵"
+        ]
+    },
+    "刷花_确认即刻出阵": {
+        "recognition": "OCR",
+        "expected": "即刻出阵",
+        "action": "Click",
+        "roi": [
+            823,
+            592,
+            205,
+            77
+        ],
+        "next": [
+            "刷花_战斗循环点击"
+        ],
+        "pre_delay": 500,
+        "post_delay": 5000
+    },
+    "刷花_战斗循环点击": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            876,
+            183,
+            94,
+            67
+        ],
+        "next": [
+            "刷花_寻找进军按钮",
+            "刷花_检测关卡结束",
+            "刷花_战斗循环点击"
+        ],
+        "pre_delay": 500
+    },
+    "刷花_寻找进军按钮": {
+        "recognition": "OCR",
+        "expected": "进军",
+        "action": "Click",
+        "roi": [
+            742,
+            475,
+            113,
+            67
+        ],
+        "next": [
+            "刷花_战斗循环点击"
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000
+    },
+    "刷花_检测关卡结束": {
+        "recognition": "OCR",
+        "expected": "编队",
+        "action": "Click",
+        "roi": [
+            1149,
+            134,
+            129,
+            66
+        ],
+        "next": [
+            "刷花_选择角色编队"
+        ],
+        "pre_delay": 500
+    },
+    "刷花_选择角色编队": {
+        "recognition": "OCR",
+        "expected": "选择",
+        "roi": [
+            960,
+            114,
+            85,
+            79
+        ],
+        "action": "Click",
+        "next": [
+            "刷花_检测疲劳度上限",
+            "刷花_任务入口"
+        ],
+        "pre_delay": 500,
+        "post_delay": 5000
+    },
+    "刷花_检测疲劳度上限": {
+        "recognition": "OCR",
+        "expected": "100/100",
+        "roi": [
+            981,
+            440,
+            65,
+            26
+        ],
+        "pre_delay": 5000,
+        "next": [
+            "结束任务"
+        ]
+    }
+}

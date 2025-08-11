@@ -1,0 +1,7 @@
+{
+    "结束任务": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": []
+    }
+}
