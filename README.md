@@ -5,119 +5,145 @@
 
 <div align="center">
 
-# MaaPracticeBoilerplate
+# 刀剑乱舞自动化助手
+
+**基于 MaaFramework 的刀剑乱舞游戏自动化工具**
 
 </div>
 
-本仓库为 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供的项目模板，开发者可基于此模板直接创建自己的 MaaXXX 项目。
+本项目基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 开发，专为刀剑乱舞游戏提供自动化功能，帮助玩家减少重复性操作。
 
 > **MaaFramework** 是基于图像识别技术、运用 [MAA](https://github.com/MaaAssistantArknights/MaaAssistantArknights) 开发经验去芜存菁、完全重写的新一代自动化黑盒测试框架。
-> 低代码的同时仍拥有高扩展性，旨在打造一款丰富、领先、且实用的开源库，助力开发者轻松编写出更好的黑盒测试程序，并推广普及。
 
-## 即刻开始
+## ✨ 功能特色
 
-- [📄 快速开始](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md)
-- [🎞️ 视频教程](https://www.bilibili.com/video/BV1yr421E7MW)
+### 🌸 维新刷花（函馆关卡）
 
-## 如何开发
+- 自动选择维新的记忆-函馆关卡
+- 使用部队一进行战斗
+- 自动检测疲劳度上限（100/100）
+- 支持循环刷取直至体力耗尽
 
-0. 使用右上角 `Use this template` - `Create a new repository` 来基于本模板创建您自己的项目。
+### ⚔️ 一键演练
 
-1. 克隆本项目及子项目（地址请修改为您基于本模板创建的新项目地址）。
+- 自动寻找并发起演练挑战
+- 使用部队二进行演练
+- 循环进行演练直至无可挑战对象
+
+### 📈 5-4练级（阿津贺志山之战）
+
+- 自动选择武家的记忆-阿津贺志山关卡
+- 使用部队三进行练级
+- 智能避免进入王点
+- 自动检测重伤状态并停止
+- 支持自动返回本丸重新开始
+
+## 🚀 快速开始
+
+### 环境要求
+
+- Android 设备或模拟器
+- Python 3.9+
+- ADB 调试工具
+
+### 安装步骤
+
+1. **克隆项目**
 
     ```bash
-    git clone https://github.com/MaaXYZ/MaaPracticeBoilerplate.git
+    git clone https://github.com/Severus-Yang0/MaaToukenRanbu.git
+    cd MaaToukenRanbu
     ```
 
-2. 下载 MaaFramework 的 [Release 包](https://github.com/MaaXYZ/MaaFramework/releases)，解压到 `deps` 文件夹中。
+2. **下载 MaaFramework**
 
-3. 下载通用资源子模块（MaaCommonAssets）
+    从 [MaaFramework Releases](https://github.com/MaaXYZ/MaaFramework/releases) 下载最新版本，解压到 `deps` 文件夹中。
+
+3. **配置 OCR 模型**
 
     ```bash
     git submodule update --init --recursive
-    ```
-
-    请注意，子模块仓库体积较大，请确认您已经成功下载，否则后续 OCR（文字识别）将报错并无识别结果。  
-    若 git 命令始终无法成功下载，也可尝试前往 [Mirror酱](https://mirrorchyan.com/zh/projects?rid=MaaCommonAssets&source=ghtempl-readme) 手动下载后解压到 `assets/MaaCommonAssets` 文件夹中，目录结构为 `assets/MaaCommonAssets/OCR`。
-
-4. 配置资源文件。
-
-    ```bash
     python ./configure.py
     ```
 
-    若报错 `File Not Found: XXXXXX`，则说明上一步 MaaCommonAssets 未正常下载，请再次检查！
+    如果子模块下载失败，可从 [Mirror酱](https://mirrorchyan.com/zh/projects?rid=MaaCommonAssets&source=ghtempl-readme) 手动下载并解压到 `assets/MaaCommonAssets` 文件夹。
 
-5. 进行开发工作，按您的业务需求修改 `assets` 中的资源文件，请参考 [MaaFramework 相关文档](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/1.1-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.md#%E8%B5%84%E6%BA%90%E5%87%86%E5%A4%87)。
-
-6. 完成开发后，上传您的代码并发布版本。
+4. **安装依赖**
 
     ```bash
-    # 配置 git 信息（仅第一次需要，后续不用再配置）
-    git config user.name "您的 GitHub 昵称"
-    git config user.email "您的 GitHub 邮箱"
-    
-    # 提交修改
-    git add .
-    git commit -m "XX 新功能"
-    git push origin HEAD -u
+    python -m pip install MaaFW --upgrade
     ```
 
-7. 发布您的版本
+5. **连接设备**
 
-    需要**先**修改仓库设置 `Settings` - `Actions` - `General` - `Read and write permissions` - `Save`
+    确保 Android 设备已开启 USB 调试，并通过 ADB 连接到电脑。
 
-    ```bash
-    # CI 检测到 tag 会自动进行发版
-    git tag v1.0.0
-    git push origin v1.0.0
-    ```
+## ⚙️ 配置说明
 
-8. 更多操作，请参考 [个性化配置](./docs/zh_cn/个性化配置.md)（可选）
+### 分辨率要求
 
-## 生态共建
+本工具基于特定分辨率的坐标配置，请确保您的设备分辨率为标准分辨率。如需适配其他分辨率，可能需要调整 `assets/resource/pipeline` 中的 ROI 坐标。
 
-MAA 正计划建设为一类项目，而非舟的单一软件。
+### 部队配置
 
-若您的项目依赖于 MaaFramework，我们欢迎您将它命名为 MaaXXX, MXA, MAX 等等。当然，这是许可而不是限制，您也可以自由选择其他与 MAA 无关的名字，完全取决于您自己的想法！
+- **部队一**：用于刷花任务，建议配置稳定的队伍
+- **部队二**：用于演练任务
+- **部队三**：用于练级任务，建议配置需要练级的角色
 
-同时，我们也非常欢迎您提出 PR，在 [社区项目列表](https://github.com/MaaXYZ/MaaFramework#%E7%A4%BE%E5%8C%BA%E9%A1%B9%E7%9B%AE) 中添加上您的项目！
+## ⚠️ 注意事项
 
-## FAQ
+### 使用风险
 
-### 0. 我是第一次使用 git，这是什么？视频演示中那个黑框框命令行哪来的？
+- 本工具仅供学习交流使用
+- 使用自动化工具存在一定风险，请谨慎使用
+- 建议在小号上测试后再在主号使用
+- 使用前请仔细阅读游戏服务条款
 
-黑框框是 git bash，几乎任何现代软件的开发都离不开 git，建议先参考 [菜鸟教程](https://www.runoob.com/git/git-install-setup.html) 或搜索一些视频，学习完 git 后再来进行后续开发工作。
+### 免责声明
 
-### 1. 我是第一次使用 Python，在命令行输入 `python ./configure.py` 或 `python -m pip install MaaFW` 之后没有反应？没有报错，也没有提示成功，什么都没有
+- 使用本工具产生的任何后果由用户自行承担
+- 开发者不对因使用本工具导致的账号问题负责
+- 请遵守游戏官方规定，理性游戏
 
-Win10 或者 Win11 系统自带了一份 "Python"，但它其实只是一个安装器，是没法用的。  
-你需要做的是关闭它或者删除它的环境变量，然后自己去 Python 官网下载并安装一份 Python。  
-[参考方法](https://www.bilibili.com/read/cv24692025/)
+## 🔧 常见问题
 
-### 2. 使用 MaaDebugger 或 MaaPicli 时弹窗报错，应用程序错误：应用程序无法正常启动
+### 识别失败怎么办？
 
-![缺少运行库](https://github.com/user-attachments/assets/942df84b-f47d-4bb5-98b5-ab5d44bc7c2a)
+1. 确认游戏界面清晰，无遮挡
+2. 检查设备分辨率是否匹配
+3. 确认 OCR 模型已正确下载
+4. 查看 `debug/maa.log` 日志文件排查问题
 
-一般是电脑缺少某些运行库，请安装一下 [vc_redist](https://aka.ms/vs/17/release/vc_redist.x64.exe) 。
+### 点击位置不准确
 
-### 3. 我在这个仓库里提了 Issue 很久没人回复
+可能是分辨率不匹配导致的坐标偏移，需要根据您的设备调整配置文件中的坐标。
 
-这里是《项目模板》仓库，它仅仅是一个模板，一般很少会修改，开发者也较少关注。  
-在此仓库请仅提问模板相关问题，其他问题最好前往对应的仓库提出，如果有 log，最好也带上它（`debug/maa.log` 文件）
+### 程序无响应
 
-- MaaFW 本身及 MaaPiCli 的问题：[MaaFramework/issues](https://github.com/MaaXYZ/MaaFramework/issues)
-- MaaDebugger 的问题：[MaaDebugger/issues](https://github.com/MaaXYZ/MaaDebugger/issues)
-- 不知道算是哪里的、其他疑问等：[讨论区](https://github.com/MaaXYZ/MaaFramework/discussions)
+1. 检查 ADB 连接是否正常
+2. 确认设备未锁屏
+3. 重启程序或重新连接设备
 
-### 4. OCR 文字识别一直没有识别结果，报错 "Failed to load det or rec", "ocrer_ is null"
+## 🤝 贡献指南
 
-**请仔细阅读文档**，你无视了前面步骤的报错。我不想解释了，请再把本文档仔细阅读一遍！
+欢迎提交 Issue 和 Pull Request 来完善本项目！
 
-## 鸣谢
+### 反馈问题
+
+- 游戏功能相关问题请在本项目提 Issue
+- MaaFramework 框架问题请前往 [MaaFramework/issues](https://github.com/MaaXYZ/MaaFramework/issues)
+- 使用疑问可在 [MaaFramework 讨论区](https://github.com/MaaXYZ/MaaFramework/discussions) 交流
+
+## 📄 开源协议
+
+本项目采用与 MaaFramework 相同的开源协议。
+
+## 🙏 鸣谢
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
 
-感谢以下开发者对本项目作出的贡献（下面链接改成你自己的项目地址）:
+感谢 MaaFramework 团队提供的优秀自动化框架。
 
-[![Contributors](https://contrib.rocks/image?repo=MaaXYZ/MaaFramework&max=1000)](https://github.com/MaaXYZ/MaaFramework/graphs/contributors)
+---
+
+**⭐ 如果这个项目对您有帮助，请考虑给个 Star！**

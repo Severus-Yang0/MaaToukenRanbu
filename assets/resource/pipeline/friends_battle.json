@@ -169,7 +169,22 @@
         "action": "DoNothing",
         "next": [
             "演练_寻找发起挑战",
-            "结束任务"
+            "演练_回到本丸"
         ]
+    },
+    "演练_回到本丸": {
+        "recognition": "OCR",
+        "expected": "本丸",
+        "roi": [
+            1156,
+            653,
+            119,
+            59
+        ],
+        "action": "Click",
+        "next": [
+            "结束任务"
+        ],
+        "pre_delay": 500,
     }
 }
