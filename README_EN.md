@@ -9,6 +9,8 @@
 
 **An automated tool for Touken Ranbu game based on MaaFramework**
 
+**[简体中文](./README.md) | [English](./README_EN.md)**
+
 *Dear Yasumoto-san, thank you for bringing light to my journey*
 
 </div>
