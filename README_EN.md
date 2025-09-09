@@ -8,7 +8,9 @@
 # Touken Ranbu Automation Assistant
 
 **An automated tool for Touken Ranbu game based on MaaFramework**
+
 *Dear Yasumoto-san, thank you for bringing light to my journey*
+
 </div>
 
 This project is developed based on [MaaFramework](https://github.com/MaaXYZ/MaaFramework), specifically designed to provide automation features for the Touken Ranbu game, helping players reduce repetitive operations.
