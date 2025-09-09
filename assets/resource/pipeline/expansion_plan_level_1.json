@@ -1,0 +1,140 @@
+{
+    "战扩关卡1_任务入口": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "战扩关卡1_寻找出阵按钮",
+            "战扩关卡1_寻找切换按钮"
+        ]
+    },
+    "战扩关卡1_寻找切换按钮": {
+        "recognition": "OCR",
+        "expected": "切换",
+        "roi": [
+            1139,
+            3,
+            138,
+            55
+        ],
+        "action": "Click",
+        "next": [
+            "战扩关卡1_寻找出阵按钮"
+        ],
+        "pre_delay": 500
+    },
+    "战扩关卡1_寻找出阵按钮": {
+        "recognition": "OCR",
+        "expected": "出阵",
+        "roi": [
+            1147,
+            64,
+            129,
+            69
+        ],
+        "action": "Click",
+        "next": [
+            "战扩关卡1_点击出阵菜单"
+        ],
+        "pre_delay": 500
+    },
+    "战扩关卡1_点击出阵菜单": {
+        "recognition": "OCR",
+        "expected": "出阵",
+        "roi": [
+            426,
+            79,
+            312,
+            362
+        ],
+        "action": "Click",
+        "next": [
+            "战扩关卡1_点击战力扩充计划"
+        ],
+        "pre_delay": 500
+    },
+    "战扩关卡1_点击战力扩充计划": {
+        "recognition": "OCR",
+        "expected": "战力扩充计划",
+        "roi": [
+            493,
+            197,
+            314,
+            80
+        ],
+        "action": "Click",
+        "next": [
+            "战扩关卡1_点击关卡1"
+        ],
+        "post_delay": 1000
+    },
+    "战扩关卡1_点击关卡1": {
+        "recognition": "OCR",
+        "roi": [
+            414,
+            276,
+            54,
+            52
+        ],
+        "expected": "济",
+        "action": "Click",
+        "next": [
+            "战扩关卡1_选择部队四",
+        ],
+        "pre_delay": 500
+    },
+    "战扩关卡1_选择部队四": {
+        "recognition": "OCR",
+        "expected": "部",
+        "roi": [
+            190,
+            564,
+            38,
+            45
+        ],
+        "action": "Click",
+        "next": [
+            "战扩关卡1_确认即刻出阵",
+            "战扩关卡1_点击关卡1"
+        ],
+        "pre_delay": 500
+    },
+    "战扩关卡1_确认即刻出阵": {
+        "recognition": "OCR",
+        "expected": "即刻出阵",
+        "roi": [
+            823,
+            586,
+            203,
+            87
+        ],
+        "action": "Click",
+        "next": [
+            "战扩关卡1_战斗循环点击",
+        ],
+        "post_delay": 5000
+    },
+    "战扩关卡1_战斗循环点击": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            842,
+            424,
+            27,
+            11
+        ],
+        "next": [
+            "战扩关卡1_检测重伤状态",
+            "战扩关卡1_战斗循环点击"
+        ],
+        "pre_delay": 500,
+        "post_delay": 1000
+    },
+    "战扩关卡1_检测重伤状态": {
+        "recognition": "OCR",
+        "expected": "重伤",
+        "action": "DoNothing",
+        "next": [
+            "结束任务"
+        ]
+    }
+}
